@@ -5,6 +5,6 @@ npm install
 ```
 Return to root of application  
 
-```mvn clean package
-mvn spring-boot:run
-```
+`mvn clean package`
+
+`mvn spring-boot:run`
