@@ -1,0 +1,42 @@
+<!--  TO DO:
+- Add support for multiple emails
+- Add immediate validation for emails and required fields
+ -->
+<div class="row">
+	<div class="col-md-4 col-md-offset-4">
+		<div ng-show="sendError" class="alert alert-danger">
+			<strong>Error!</strong> Your message could not be sent at this time.
+			Please try again.
+		</div>
+		<div ng-show="cannotSend" class="alert alert-danger">
+			<strong>Error!</strong> Please complete the entire form
+		</div>
+		<form ng-show="!success" name="form" ng-submit="submit()"
+			novalidate>
+			<div class="form-group">
+				<h3 class="text-center">Send a little message!</h3>
+				<label for="recipientEmail">Recipient Email</label> <input
+					type="email" class="form-control" id="recipientEmail"
+					placeholder="Enter email" ng-model="form.recipientEmail"> <label
+					for="recipientEmail">Recipient Name</label> <input type="text"
+					class="form-control" id="recipientName" placeholder="Enter name"
+					ng-model="form.recipientName"> <label for="content"">Message</label>
+				<textarea class="form-control" rows="5" ng-model="form.content"
+					id="content">{{defaultContent}}</textarea>
+				<br /> <br /> <label for="senderEmail">Your Name</label> <input
+					type="text" class="form-control" id="senderName"
+					placeholder="Enter name" ng-model="form.senderName"> <br />
+				<br />
+				<button class="btn btn-lg btn-primary btn-block" type="submit">
+					Send</button>
+			</div>
+		</form>
+		
+		
+		<div class="col-md-4 col-md-offset-4" ng-show="success">
+			<h2>Your message has been sent. Happy Holidays!</h2>
+			<h3>
+				<a href="" ng-click="success=false; sendAnother()">Send another?</a>
+			</h3>
+		</div>
+	</div>

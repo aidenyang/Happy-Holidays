@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="HappyHolidaysApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <base href="/">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Happy Holidays!</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/node_modules/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="/node_modules/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="app.css">
+  <script src="/node_modules/html5-boilerplate/src/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+  <nav class="navbar navbar-light bg-faded" ng-controller="NavCtrl">
+  <ul class="nav navbar-nav">
+   <!-- 	<li ng-hide="authenticated" class="nav-item">
+      <a class="nav-link" href="#!/login">Login</a>
+    </li>
+    <li ng-show="authenticated" class="nav-item">
+      <a class="nav-link" href="" ng-click="logout()">Logout</a>
+    </li> -->
+    <li class="nav-item">
+      <a class="nav-link" ng-class="{current: isActive('/form')}" href="#!/form">Send New Message <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item" >
+      <a class="nav-link" ng-class="{current: isActive('/history-view')}" href="#!/history-view">Past Messages</a>
+    </li>
+  </ul>
+</nav>
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div ng-view></div>
+  </div>
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="/node_modules/angular/angular.js"></script>
+  <script src="/node_modules/angular-route/angular-route.js"></script>
+  <script src="app.js"></script>
+  <script src="form/FormCtrl.js"></script>
+  <script src="history/HistoryCtrl.js"></script>
+  <script src="nav/NavCtrl.js"></script>
+  <script src="404/404Ctrl.js"></script>
+</body>
+</html>
